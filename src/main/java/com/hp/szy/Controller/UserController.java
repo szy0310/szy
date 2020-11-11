@@ -11,29 +11,21 @@ import java.io.UnsupportedEncodingException;
 @RestController
 public class UserController {
     @Resource
- public UserService userService;
-
-
+ private UserService userService;
+//登录
 @RequestMapping("/login")
-public Msg login( String username,String password) throws UnsupportedEncodingException {
-    String realPassword = userService.getPassword(username);
+@ResponseBody
+public Msg login( String loginName,String password) throws UnsupportedEncodingException {
+    String realPassword = userService.getPassword(loginName);
+
     if (realPassword == null) {
         return Msg.fail().add("info","错误");
     } else if (!realPassword.equals(password)) {
         return Msg.fail().add("info","密码错误");
     } else {
-        return Msg.success().add("token", JWTUtil.createToken(username));
+        return Msg.success().add("token", JWTUtil.createToken(loginName));
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 }

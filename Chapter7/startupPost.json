@@ -1,0 +1,33 @@
+[
+  {
+    "description": "，模拟一个没有参数的get",
+    "request": {
+      "uri": "/postdemo",
+      "method": "post"
+    },
+    "response": {
+      "text": "这是一个有参数的post请求",
+      "headers":{
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  },
+  {
+    "description": "，模拟一个有参数的post",
+    "request": {
+      "uri": "/postdemoui",
+      "method": "post",
+      "forms": {
+        "name": "huhansan",
+        "sex": "男"
+      }
+
+    },
+    "response": {
+      "text": "这是一个有参数的post请求",
+      "headers":{
+        "Content-Type":"text/html;charset=gbk"
+      }
+    }
+  }
+]

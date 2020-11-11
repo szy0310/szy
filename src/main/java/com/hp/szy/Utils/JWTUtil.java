@@ -20,12 +20,12 @@ public class JWTUtil {
     /**
      * 生成 token
      */
-    public static String createToken(String username) throws UnsupportedEncodingException {
+    public static String createToken(String loginName) throws UnsupportedEncodingException {
         Date date = new Date(System.currentTimeMillis() + EXPIRE_TIME);
         Algorithm algorithm = Algorithm.HMAC256(SECRET);
         // 附带username信息
         return JWT.create()
-                .withClaim("username", username)
+                .withClaim("loginName", loginName)
                 //到期时间
                 .withExpiresAt(date)
                 //创建一个新的JWT，并使用给定的算法进行标记
@@ -35,12 +35,12 @@ public class JWTUtil {
     /**
      * 校验 token 是否正确
      */
-    public static boolean verify(String token, String username) {
+    public static boolean verify(String token, String loginName) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(SECRET);
             //在token中附带了username信息
             JWTVerifier verifier = JWT.require(algorithm)
-                    .withClaim("username", username)
+                    .withClaim("loginName", loginName)
                     .build();
             //验证 token
             verifier.verify(token);
@@ -56,7 +56,7 @@ public class JWTUtil {
     public static String getUsername(String token) {
         try {
             DecodedJWT jwt = JWT.decode(token);
-            return jwt.getClaim("username").asString();
+            return jwt.getClaim("loginName").asString();
         } catch (JWTDecodeException e) {
             return null;
         }

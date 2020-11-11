@@ -15,7 +15,7 @@ public interface TSysuserMapper {
 
      */
 
-    String getPassword(String username);
+    String getPassword(String loginName);
 
 
 
@@ -25,7 +25,7 @@ public interface TSysuserMapper {
 
      */
 
-    String getRole(String username);
+    String getRole(String loginName);
 
 
 
@@ -35,7 +35,7 @@ public interface TSysuserMapper {
 
      */
 
-    void updatePassword(@Param("username") String username, @Param("newPassword") String newPassword);
+    void updatePassword(@Param("loginName") String loginName, @Param("Password") String Password);
 
 
 
@@ -55,7 +55,7 @@ public interface TSysuserMapper {
 
      */
 
-    void banUser(String username);
+    void banUser(String loginName);
 
 
 
@@ -65,7 +65,7 @@ public interface TSysuserMapper {
 
      */
 
-    int checkUserBanStatus(String username);
+    int checkUserBanStatus(String loginName);
 
 
 
@@ -75,7 +75,7 @@ public interface TSysuserMapper {
 
      */
 
-    String getRolePermission(String username);
+    String getRolePermission(String loginName);
 
 
 
@@ -85,9 +85,7 @@ public interface TSysuserMapper {
 
      */
 
-    String getPermission(String username);
-
-
+    String getPermission(String loginName);
 
 
 }

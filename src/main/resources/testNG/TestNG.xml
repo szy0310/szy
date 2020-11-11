@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<suite name="自己的接口测试套件">
+<test name="测试模块">
+   <classess>
+     <class name="com.hp.szy.Controller.UserController">
+     <methods>
+        <incude name="login"/>
+        <incude/>
+        <incude/>
+     </methods>
+
+     </class>
+   </classess>
+</test>
+<!--  监听器-->
+    <listeners>
+
+        <listener class-name="com.vimalselvam.testng.listener.ExtentTestNgFormatter"/>
+    </listeners>
+
+
+</suite>

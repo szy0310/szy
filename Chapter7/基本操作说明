@@ -1,0 +1,21 @@
+java -jar ./moco-runner-0.11.1-standalone.jar http -p 8010 -c startup.json
+
+java -jar ./moco-runner-0.11.1-standalone.jar http -p 8010 -c startupGet.json
+
+
+java -jar ./moco-runner-0.11.1-standalone.jar http -p 8010 -c startupPost.json
+
+
+java -jar ./moco-runner-0.11.1-standalone.jar http -p 8010 -c startupWithCookies.json
+
+
+java -jar ./moco-runner-0.11.1-standalone.jar http -p 8010 -c startupWithHeader.json  请求头
+
+
+java -jar ./moco-runner-0.11.1-standalone.jar http -p 8010 -c startupWithRedirect.json   请求转发
+
+
+
+
+
+

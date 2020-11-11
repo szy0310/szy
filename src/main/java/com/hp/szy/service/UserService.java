@@ -4,16 +4,16 @@ package com.hp.szy.service;
 public interface UserService {
 
 
-    String getRolePermission(String username);
+    String getRolePermission(String loginName);
 
 
-    String getRole(String username);
+    String getRole(String loginName);
 
 
-    String getPermission(String username);
+    String getPermission(String loginName);
 
 
-    int checkUserBanStatus(String username);
+    int checkUserBanStatus(String loginName);
 
 
     String getPassword(String loginName);
