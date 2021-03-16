@@ -12,36 +12,31 @@ public class UserServiceimg implements UserService {
     @Resource
     public TSysuserMapper tSysuserMapper;
 
-
-
-
     @Override
-    public String getRolePermission(String username) {
-        return tSysuserMapper.getRolePermission(username);
+    public String getRolePermission(String loginName) {
+        return tSysuserMapper.getRolePermission(loginName);
     }
 
     @Override
-    public String getRole(String username) {
-
-        return tSysuserMapper.getRole(username);
-    }
-    @Override
-    public String getPermission(String username) {
-
-        return tSysuserMapper.getPermission(username);
-
+    public String getRole(String loginName) {
+        return tSysuserMapper.getRole(loginName);
     }
 
     @Override
-    public int checkUserBanStatus(String username) {
-
-        int sys=tSysuserMapper.checkUserBanStatus(username);
-
-        return sys;
+    public String getPermission(String loginName) {
+        return tSysuserMapper.getPermission(loginName);
     }
 
     @Override
-    public String getPassword(String username) {
-        return tSysuserMapper.getPassword(username);
+    public int checkUserBanStatus(String loginName) {
+        return tSysuserMapper.checkUserBanStatus(loginName);
+    }
+
+    @Override
+    public String getPassword(String loginName) {
+        return tSysuserMapper.getPassword(loginName);
     }
 }
+
+
+

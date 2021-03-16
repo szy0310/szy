@@ -1,6 +1,9 @@
 package com.hp.szy.Utils.model;
 
+import com.hp.szy.models.TRole;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // 用于返回前端json数据的工具类
